@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Lyrics Player</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html,
+		body {
+			height: 100%;
+		}
+
+		#list-music {
+			background: #67B26F;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to top, #4ca2cd, #67B26F);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to top, #4ca2cd, #67B26F);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			height: 50%;
+			overflow-y: scroll;
+		}
+
+		#lyric-music {
+			background: #232526;
+			/* fallback for old browsers */
+			background: -webkit-linear-gradient(to bottom, #414345, #232526);
+			/* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to bottom, #414345, #232526);
+			/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			height: 50%;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-size: 32pt;
+			text-align: center;
+			color: white;
+			overflow-y: scroll;
+		}
+
+		#display {
+			padding: 15px;
+		}
+
+		ul {
+			text-align: center;
+		}
+
+		li {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-size: 17pt;
+			padding: 10px 0 10px 0;
+		}
+
+		li::before {
+			font-family: "FontAwesome";
+			content: "\f144  ";
+			cursor: pointer;
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
 <body>
-  <div id="player"></div>
-  <button id="jump">Ir para 2 min</button>
-  <button id="play">Play</button>
-  <button id="add">Add</button>
-  <div id="display" style="font-size: 38pt; height: 400px; background-color: gray; overflow-y: scroll; padding: 5px;">
-  </div>
-  <script src="index.js"></script>
+	<div id="player"></div>
+	<div id="list-music">
+		<ul id="list-lyrics">
+		</ul>
+	</div>
+	<div id="lyric-music">
+		<div id="display"></div>
+	</div>
+	<script src="youtubeapi.js"></script>
+	<script src="index.js"></script>
 </body>
-
 </html>
